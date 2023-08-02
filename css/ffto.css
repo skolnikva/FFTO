@@ -1,0 +1,1422 @@
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15 px;
+    line-height: 1.6;
+    color: #000;
+}
+
+.body_wraper{
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* 
+    Conteiner
+    =========================================================
+*/
+.conteiner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 
+    Шапка
+    =========================================================
+*/
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.header{
+    width: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+    background-color: transparent;
+    transition: background-color 0.3s;
+    transition: top 0.3s; 
+}
+
+
+/* 
+    Логотип
+    =========================================================
+*/
+.header_logo{ 
+    display: block;
+}
+
+.header_logo img {
+    position:absolute;
+}
+
+.header_logo img.first {
+    opacity:0;
+    filter:alpha (opacity=0);
+    transition: opacity .2s linear
+}
+
+.header_logo:hover img.first {
+    opacity:1;
+    filter:alpha (opacity=100);
+    transition: opacity .2s linear
+}
+
+.header_logo:hover img.second, .animate2 img.second:hover {
+    opacity:0;
+    filter:alpha (opacity=0);
+    transition: opacity .2s linear
+}
+
+/* 
+    Шапка для остальных страниц
+    =========================================================
+*/
+
+.all_header{   
+    width: 100%;
+    
+    font-family: 'YourSelectedFont', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+    background-color: #000;
+    transition: top 0.3s; 
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+/* 
+    Логотип
+    =========================================================
+*/
+.header_logo{ 
+    display: block;
+}
+
+.header_logo img {
+    position:absolute;
+}
+
+.header_logo img.first {
+    opacity:0;
+    filter:alpha (opacity=0);
+    transition: opacity .2s linear
+}
+
+.header_logo:hover img.first {
+    opacity:1;
+    filter:alpha (opacity=100);
+    transition: opacity .2s linear
+}
+
+.header_logo:hover img.second, .animate2 img.second:hover {
+    opacity:0;
+    filter:alpha (opacity=0);
+    transition: opacity .2s linear
+}
+
+/* 
+    Бургер
+    =========================================================
+*/
+.burger_btn{
+    
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 2;
+    cursor: pointer;
+    
+    padding-top: 25px;
+}
+
+.burger_btn span{
+    
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    left: 5px;
+    background-color: #fff;
+    transition: opacity .3s, transform .5s;
+    will-change: transform;
+}
+
+.burger_btn span:nth-child(1){
+    transform: translateY(-10px);
+}
+
+.burger_btn span:nth-child(3){
+    transform: translateY(10px);
+}
+
+/* Крестик */
+.header.open .burger_btn span:nth-child(1){
+        transform: translateY(0) rotate(45deg);
+    }
+
+    .header.open .burger_btn span:nth-child(2){
+        opacity: 0;
+    }
+    
+     .header.open .burger_btn span:nth-child(3){
+        transform: translateY(0) rotate(-45deg);
+    }
+
+/* Крестик */
+.all_header.open .burger_btn span:nth-child(1){
+        transform: translateY(0) rotate(45deg);
+    }
+
+    .all_header.open .burger_btn span:nth-child(2){
+        opacity: 0;
+    }
+    
+     .all_header.open .burger_btn span:nth-child(3){
+        transform: translateY(0) rotate(-45deg);
+    }
+
+/* 
+    Меню
+    =========================================================
+*/
+.menu__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    margin-left: 10%;
+    padding-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.topnav a{
+    color: #fff;
+    margin-left: 80px;
+    
+    transition: color .1s linear;
+}
+
+.topnav a:hover {
+    color: #83bebe;
+}
+
+/* 
+    Шапка при скроллинге
+    =========================================================
+*/
+.header.scrolled {
+    background-color: #000;
+    top: -60px;
+}
+
+/* 
+    Шапка при скроллинге
+    =========================================================
+*/
+.all_header.scr {
+    top: -60px;
+}
+
+/* 
+    Главный экран FFTO
+    =========================================================
+*/
+.intro{
+    width: 100%;
+    height: 100vh;
+    
+    background: url("images/fon_0.png") center no-repeat;
+    background-size: cover;
+}
+
+.intro_img{
+    background: url("images/fon_1.png") center no-repeat;
+    background-color: transparent;
+    
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    margin-left: 250px;
+    
+    z-index: 1;
+    
+    transition: transform 0.7s ease;
+    
+    top: -100px;
+}
+
+
+.intro_img.scroll{
+    transform: rotate(25deg);
+}
+
+.intro_inner{
+    width: 100%;
+    max-width: 640px;
+    max-height: 158px;
+    
+    z-index: 100;
+    
+    position: absolute;
+    top: 250px; 
+}
+
+.intro_title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1;
+/*    position: relative;*/
+    top: 20px;
+    line-height: 1.3;
+    color: #fff;
+       
+}
+
+/* 
+    Кнопка
+    =========================================================
+*/
+.custom_button {
+    display: block;
+    margin-top: 40px;
+    padding: 10px 30px;
+    background-color: #19383b; 
+    color: #fff;
+    border-radius: 60px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    background-color: rgba(25, 56, 59, 0.65);
+    text-decoration: none;
+    width: 300px;
+    
+    z-index: 100;
+}
+
+.custom_button:hover {
+    background-color: rgba(25, 56, 59, 1);
+}
+
+/* 
+    Переход - волна
+    =========================================================
+*/
+.wave{
+    background: url("images/vector.png") center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+}
+
+/* 
+    Фристайл
+    =========================================================
+*/
+.intro_freestyle{
+    width: 100%;
+    
+    background-color: #fff;
+    background-size: cover;
+}
+
+.intro_freestyle_inner{
+    width: 100%;
+    
+}
+
+.caption{
+    font-size: 50px;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 180px;
+    line-height: 1.3;
+    font-family: 'Montserrat';
+    
+    color: #000;
+}
+
+.text{
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000;
+}
+
+.text_22{
+    font-weight: 600;
+    font-size: 18px;
+    color: #000;
+}
+
+.text_2{
+    font-weight: 600;
+    font-size: 18px;
+    color: #000;
+}
+
+.stripe{
+    background-color: #000;
+    height: 1px;
+    width: 55%;
+}
+
+.group{
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text_3{
+    padding-top: 25px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000;
+}
+
+.photos{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 195px;
+    width: 100%;
+    margin: 5px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+    padding-top: 10px;
+}
+
+.photos img{
+    transition: transform 0.5s ease;
+}
+
+.photos img:hover{
+    transform: scale(1.3);
+}
+/* 
+    Дисциплины
+    =========================================================
+*/
+.intro_disciplines{
+    width: 100%;
+}
+
+.caption{
+    font-size: 50px;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 180px;
+    line-height: 1.3;
+    font-family: 'Montserrat';
+    
+    color: #000;
+}
+
+.button_dis{
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+.button_dis a{  
+    justify-content: space-between;
+    align-items: center;
+    
+    margin-right: 5.7%;
+
+} 
+
+.button_dis a:hover{  
+    color: #000;
+
+}
+
+.btn-light_1{
+    border-radius: 60px;
+    border: 1px solid #000;
+    background-color: transparent;
+    font-size: 20px;
+    
+    margin-top: 15px;
+}
+
+.btn-light_1:hover{
+    background-color: #D3D4D5;
+}
+
+.button_dis_2{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.line{
+    margin-bottom: 10px;
+}
+
+.line a{
+    margin-right: 20px;
+}
+
+.btn-light{
+    background-color: #83BEBE;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-light:hover{
+    color: #fff;
+}
+
+/* 
+    Акробатика
+    =========================================================
+*/
+.text{
+    margin-top: 20px;
+    font-size: 15px;
+    color: #000;
+}
+
+.btn-light_2{
+    border: 1px solid #000;
+    background-color: transparent;
+}
+
+.btn-light_2:hover{
+    background-color: #D3D4D5;
+    color: #000;
+}
+
+.new_caption{
+    display: flex;
+    
+    font-size: 50px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.3;
+    font-family: 'Montserrat';
+    
+    color: #000;
+}
+
+.cap_btn{
+    margin-top: 180px;
+    align-items: center;
+}
+
+.text_1{
+    margin-top: 20px;
+    font-size: 15px;
+    color: #000;
+}
+
+.text_2{
+    margin-top: 20px;
+    font-size: 15px;
+    color: #000;
+    font-weight: bold;
+}
+
+.acro_img{
+    transition: transform 0.5s ease;
+}
+
+.acro_img:hover{
+    transform: scale(1.1);
+}
+/* 
+    Могул
+    =========================================================
+*/
+.intro_modul{
+    margin-bottom: 40px;
+}
+
+.mogul{
+     margin-top: 20px;
+}
+
+.text_3{
+    font-size: 15px;
+}
+
+/* 
+    Ски-кросс
+    =========================================================
+*/
+.text_4{
+    text-align:right;
+}
+
+.text_5{
+    margin: 0;
+}
+
+.cross_img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.cross_img:hover{
+    transform: scale(1.1);
+}
+/* 
+    Слоуп-стайл
+    =========================================================
+*/
+.slope_img{
+    margin-right: 80px;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.slope_img:hover{
+    transform: scale(1.3);
+}
+
+/* 
+    Биг-эйр
+    =========================================================
+*/
+.big_img{
+    transition: transform 0.5s ease;
+}
+
+.big_img:hover{
+    transform: scale(1.3);
+}
+/* 
+    Хаф-пайп
+    =========================================================
+*/
+.haf_img{
+    margin-left: 40px;
+}
+
+.text_7{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* 
+    Новости
+    =========================================================
+*/
+.news_pf{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.kvadrat{
+    font-family: "Montserrat";
+    width: 370px;
+    height: 160px;
+    background-color: #000;
+    color: #fff;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.kvadrat p1{ 
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.kvadrat p{
+    font-weight: 500;
+    margin: 10px 10px 10px 10px;
+    text-transform: uppercase;
+}
+    
+.kvadrat_www{
+    text-align: center;
+    
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.kvadrat_www a{
+    transition: color .3s linear;
+    color: #83BEBE;
+}
+
+.kvadrat_www a:hover{
+    color: #fff;
+}
+
+
+.blok{
+    margin-bottom: 10px;
+}
+
+.n_img{
+    margin-top: 30px;
+}
+
+.text_13{
+    padding-top: 15px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000;
+}
+
+.img_news{
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.img_news:hover{
+    transform: scale(1.1);
+}
+
+/* 
+    Галерея
+    =========================================================
+*/
+.kvadrat_gal{
+    width: 570px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    position:absolute;
+    
+    transition: background-color 0.5s linear;
+    
+    cursor: pointer;
+}
+
+.kvadrat_gal p{
+    font-weight: 600;
+    margin: 20px 10px 0 10px;
+    text-transform: uppercase;
+}
+
+.kvadrat_gal p1{ 
+    font-weight: 400;
+    margin-top: 7px;
+    
+    text-transform: uppercase;
+}
+
+.kvadrat_gal_www{
+    
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.kvadrat_gal_www a{
+    color: #83BEBE;
+    transition: color .3s linear
+}
+
+.kvadrat_gal_www a:hover{
+    color: #fff;
+}
+
+.img_gall{
+    z-index: 10;
+}
+
+.kvadrat_gal:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.carousel{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 700px;
+}
+
+/* 
+    Тренера
+    =========================================================
+*/
+.couch_btn{
+    margin-top: 180px;
+    align-items: center;
+}
+
+.dropdown{
+    width: 250px;
+    margin-left: 40px;
+}
+
+.new_caption_2{
+    display: flex;
+    
+    font-size: 50px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.3;
+    font-family: 'Montserrat';
+    
+    color: #000;
+}
+
+.dropdown-item:focus{
+    background-color: transparent;
+    color: #000;
+}
+
+.btn-secondary{
+    color: #000;
+    background-color: transparent;
+}
+
+.btn-secondary:hover{
+    background-color: #D3D4D5;
+    color: #000;
+    border-color: #D3D4D5;
+}
+
+.btn-secondary:focus{
+    background-color: #D3D4D5;
+    color: #000;
+    border-color: #D3D4D5;
+}
+
+.couch_info{
+
+    width: 320px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    border: 2px solid #dfe2e5;
+  border-radius: 20px;
+  margin-top: 200px;
+    
+    font-size: 15px;
+    
+    margin-bottom: 40px;
+}
+
+.img_cou{
+    width: 250px; 
+    height: 250px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    
+    margin: -200px 0 10px 0;
+}
+
+.img_cou img{
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+
+}
+
+.couch_info p1{
+    font-weight: bold;
+    width: 270px;
+    text-align: left;
+}
+
+.couch_info p{
+    width: 270px;
+    text-align: left;
+}
+
+.cou_pf{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.couch_info_www{
+    margin-bottom: 10px;
+}
+
+.couch_info_www a{
+    color: #83BEBE;
+}
+
+.couch_info_www a:hover{
+    color:#000;
+}
+
+.btn-light_7{
+    display: inline-block;
+    
+    width: 38px;
+    height: 25px;
+    background-color: #83BEBE;
+    color: #fff;
+    font-weight: 600;
+    
+    font-size: 15px;
+    text-align: left;
+    vertical-align: middle;
+    
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-light_7:hover{
+    background-color: #D3D4D5;
+    color: #fff;
+}
+
+.btn-light_7_AET{
+    display: inline-block;
+    
+    width: 42px;
+    height: 25px;
+    background-color: #83BEBE;
+    color: #fff;
+    font-weight: 600;
+    
+    font-size: 15px;
+    text-align: left;
+    vertical-align: middle;
+    
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-light_7_AET:hover{
+    background-color: #D3D4D5;
+    color: #fff;
+}
+
+.btn-light_7_AE{
+    display: inline-block;
+    
+    width: 35px;
+    height: 25px;
+    background-color: #83BEBE;
+    color: #fff;
+    font-weight: 600;
+    
+    font-size: 15px;
+    text-align: left;
+    vertical-align: middle;
+    
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-light_7_AE:hover{
+    background-color: #D3D4D5;
+    color: #fff;
+}
+
+.btn-light_7_SS{
+    display: inline-block;
+    
+    width: 32px;
+    height: 25px;
+    background-color: #83BEBE;
+    color: #fff;
+    font-weight: 600;
+    
+    font-size: 15px;
+    text-align: left;
+    vertical-align: middle;
+    
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-light_7_SS:hover{
+    background-color: #D3D4D5;
+    color: #fff;
+}
+
+.couch_info p{
+    margin-bottom: 5px;
+}
+
+.couch_info p a{
+    margin-right: 3px;
+}
+
+..img_cou_2{
+    width: 250px; 
+    height: 250px; 
+    border-radius: 50%; 
+
+}
+
+.ph_coach{
+    margin-right: 10px;
+}
+
+.couch_info_2{
+
+    width: 320px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top: 200px;
+
+    margin-bottom: 40px;
+}
+
+.peple{
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.txt_coach{
+    text-align: left;
+}
+
+.sorev_1{
+    margin-top: 80px;
+}
+
+.priz{
+    width: 260px;
+}
+
+.couch_info_22{
+
+    width: 320px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  border-radius: 20px;
+  margin-top: 200px;
+    
+    font-size: 15px;
+    
+    margin-bottom: 40px;
+}
+
+/* 
+    Спортсмены
+    =========================================================
+*/
+.mesto{
+    display: flex;
+    align-items: flex-start;
+}
+
+.mesto_1{
+    border: 1px solid #000;
+  border-radius: 60px;
+    height: 30px;
+    width: 30px;
+    
+    margin-left: 10px;
+}
+
+.mesto_1 p1{
+    font-family: "Crimson Pro", sans-serif ;
+    font-size: 18px;
+}
+
+.mesto_2{
+    border: 1px solid #000;
+  border-radius: 60px;
+    height: 30px;
+    width: 30px;
+    
+    margin-left: 10px;
+}
+
+.mesto_2 p1{
+    font-family: "Crimson Pro", sans-serif ;
+    font-size: 15px;
+}
+
+.mesto_3{
+    border: 1px solid #000;
+  border-radius: 60px;
+    height: 30px;
+    width: 30px;
+    
+    margin-left: 10px;
+}
+
+.mesto_3 p1{
+    font-family: "Crimson Pro", sans-serif ;
+    font-size: 13px;
+}
+
+/* 
+    Подвал
+    =========================================================
+*/
+.footer {   
+    color: #000;
+    text-align: center;
+    padding: 40px 0;
+    
+    z-index: 1000;
+}
+
+.footer_inner{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_logo{
+    text-align: left;
+    color: #808080;
+    font-size: 10px;
+}
+
+.contacts{
+    text-align: right;
+    z-index: 1000;
+}
+
+.stripe_top{
+    background-color: #000;
+    height: 1px; 
+    width: 100%; 
+}
+
+.site_by{
+    font-size: 12px;
+    color: #808080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.link_Alice{
+    display: inline-block;
+    position: relative;
+    
+    color: #808080;
+    text-decoration: none;
+    
+    transition: color .1s linear;
+    
+    z-index: 1000;
+}
+
+.link_Alice:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5px;
+    
+    background-color: #83bebe;
+    opacity: 0;
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    
+    transition: opacity .1s linear  
+}
+
+.link_Alice:hover {
+    color: #83bebe;
+}
+
+.link_Alice:hover:after {
+    opacity: 1;    
+}
+
+/* 
+    Логотип
+    =========================================================
+*/
+.contacts {
+  display: flex;
+  flex-direction: column;
+    align-items:flex-end;
+}
+
+.number {
+  display: flex;
+    justify-content: space-between;
+  align-items:flex-end;
+    
+}
+
+.number-text {
+  margin: 0;
+}
+
+number p{
+    margin-right: 10px;
+}
+
+.number a {
+  margin-left: 10px;
+}
+
+
+.new_ph{
+    background-color: #83BEBE;
+    border-radius: 7px;
+}
+
+.new_ph:hover{
+    background-color: #C2EEEF;
+}
+
+/* 
+    Медиа запросы
+    =========================================================
+*/
+@media screen and (max-width: 1230px){
+    .topnav a{
+        margin-left: 75px;
+    }
+    
+    .mogul{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .text_3{
+        margin-top: 20px;
+    }
+    
+    .text_4{
+        text-align:left;
+    }
+    
+    .haf_img{
+        margin-left: 0;
+    }
+    
+    .intro_img.scroll{
+    transform: none;
+    }
+    
+    .intro_img{
+    opacity: 0;
+    }
+
+
+@media screen and (max-width: 1190px){
+    .topnav a{
+        margin-left: 65px;
+    }
+}
+
+@media screen and (max-width: 1120px){
+    .topnav a{
+        margin-left: 55px;
+    }
+    
+    .stripe{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1055px){
+    .topnav a{
+        margin-left: 45px;
+    }    
+    
+}
+
+@media screen and (max-width: 990px){
+    .topnav a{
+        margin-left: 35px;
+    }
+}
+
+@media screen and (max-width: 950px){
+    .topnav a{
+        margin-left: 25px;
+    }
+    
+    .acro{
+        flex-direction: column;
+    }
+    
+    .acro_img{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .topnav a{
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .topnav a{
+        margin-left: 10px;
+    }
+    
+    .peple{
+        display: block;
+        align-items: left;
+    }
+    
+    .sorev_1{
+        flex-direction: column;
+    }
+    
+    .sorev{
+        flex-direction: column;
+    }
+    
+    .couch_info_2{ 
+    margin-top: 240px;
+}
+    
+}
+
+/* 
+    Телефон
+    =========================================================
+*/
+@media screen and (max-width: 800px){   
+    .topnav{
+        position: absolute;
+        right: -180px;
+        top: 0;
+        width: 180px;
+        padding: 100px 20px 20px 20px;
+        background-color: #000;
+        visibility: hidden;
+        transition: transform .5s, visibility .5s;
+        will-change: transform;
+        
+    }
+    
+    .menu__link {
+        display: block;
+        padding-top: 10px;
+    }
+    
+    .burger_btn{
+        display: block;
+    }
+    
+    .header.open .topnav{
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+    
+    .menu__list {
+        display: block;
+    }
+    
+    .all_header.open .topnav{
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+    
+    /* 
+    Акробатика
+    =========================================================
+    */
+    .cap_btn{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .couch_btn{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* 
+    Подвал
+    =========================================================
+    */
+    
+    .footer_inner{
+        display: block;
+        justify-content: center;
+    }
+    
+    .site_by{
+        padding-top: 20px;
+        display: block;
+        justify-content: center;
+        text-align:left;
+    }
+    
+    .footer { 
+        display: block;
+        justify-content: center;
+        text-align:left;
+    }
+    
+    .contacts {
+        padding-top: 20px;
+        text-align: left;
+        align-items:flex-start;
+    }
+    
+    .couch_info_22{
+        display: none;
+    }
+    
+}
